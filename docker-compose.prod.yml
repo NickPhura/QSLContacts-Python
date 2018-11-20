@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  frontend:
+    command:
+      npm run buildprod
+  caddy:
+    ports:
+      - 443:443
+    volumes:
+      #This is the offline location to store Caddy certificates in case the container is restarted.
+      - $HOME/.caddy:/etc/caddycerts
+    environment:
+      #Use wildcard in domain to cover quartech.app and www.quartech.app
+      domain_1: quartech.app
+      domain_2: www.quartech.app
+      CADDYPATH: /etc/caddycerts

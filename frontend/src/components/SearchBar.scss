@@ -1,0 +1,27 @@
+.searchbox {
+  padding: 1rem;
+  flex: 0 0 auto;
+
+  &__input {
+    position: relative;
+
+    input {
+      padding-top: 0.75rem;
+      padding-right: 4rem;
+      padding-bottom: 0.75rem;
+      padding-left: 0.75rem;
+    }
+
+    .clear-btn {
+      position: absolute;
+      top: 0.1rem;
+      right: 0.1rem;
+      bottom: 0.1rem;
+      background: transparent;
+
+      i {
+        margin-top: 0.25rem;
+      }
+    }
+  }
+}

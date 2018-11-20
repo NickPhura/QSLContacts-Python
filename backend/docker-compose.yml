@@ -1,0 +1,13 @@
+version: '3.6'
+services:
+  backend:
+    image: backend-qsl-contacts-py:latest
+    container_name: backend-qsl-contacts-py-container
+    build:
+      context: .
+    volumes:
+      - './app:/home/backend-qsl-contacts-py/app'
+      - './backend-qsl-contacts.py:/home/backend-qsl-contacts-py/backend-qsl-contacts.py'
+      - './config.py:/home/backend-qsl-contacts-py/config.py'
+    ports:
+      - '5000:5000'

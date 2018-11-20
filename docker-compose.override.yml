@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  frontend:
+    command:
+      npm run build
+  backend:
+    ports:
+      - 5000:5000
+  caddy:
+    environment:
+      #overwrite Caddy to localhost, which disables https.
+      domain_1: "localhost:80"

@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+  frontend:
+    image: frontend-qsl-contacts-py:latest
+    container_name: frontend-qsl-contacts-py-container
+    build:
+      context: .
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '5200:5200'
